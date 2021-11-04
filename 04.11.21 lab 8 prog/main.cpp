@@ -17,9 +17,10 @@ int main()
     // 1 4 7 8 11
     // BEGIN concatenatio
     char str1[100]; // = "russia is";
-    scanf(" %s", str1);
+    scanf("%[^\n]s", str1);
     char str2[100]; // = " the best";
-    scanf(" %s", str2);
+    //printf("vtoryaya:\n");
+    scanf(" %[^\n]s", str2);
     int siz = sizStr(str1) + sizStr(str2);
     char* sumStr = (char*)malloc(siz*sizeof(char));
     int i = 0;
@@ -31,9 +32,9 @@ int main()
     //END concatenatio
     // BEGIN Ncomparison
     char str3[100]; // = "abcdi";
-    scanf(" %s", str3);
+    scanf(" %[^\n]s", str3);
     char str4[100]; // = "abcdj";
-    scanf(" %s", str4);
+    scanf(" %[^\n]s", str4);
     int N = 4; // количество сравниваемых символов
     int m = 0, n = 0;
     while((m < sizStr(str3)) && (n < sizStr(str4)))
@@ -60,7 +61,7 @@ int main()
     // END Ncomparison
     // BEGIN minesizStr
     char str5[100]; // = "primer sredney stroky s probelamy";  // если нужно сделать ввод с консоли, то вот нужна€ конструкци€
-    scanf(" %s", str5);                                       // scanf("%[^\n]s", &str5);
+    scanf(" %[^\n]s", str5);                                       // scanf("%[^\n]s", &str5);
     /*int counter = 0;
     while(str5[counter] != '\0')
         counter +=1;
@@ -70,9 +71,9 @@ int main()
     // END minesizStr
     // BEGIN firstEnter
     char str6[100]; // = "laboratornaya po programmirovaniy";
-    scanf(" %s", str6);
+    scanf(" %[^\n]s", str6);
     char need; // = ' '; // искомый символ
-    scanf(" %c", &need);
+    scanf(" %[^\n]c", &need);
     int pos, flag = 0;
     i = 0;
     while(i < sizStr(str6))
@@ -93,9 +94,9 @@ int main()
     // END firstEnter
     // BEGIN отрезок
     char str7[100]; // = "Meet my family. There are five of us Ц my parents, my elder brother, my baby sister and me. "; // строка в которой ищем
-    scanf(" %s", str7);
+    scanf(" %[^\n]s", str7);
     char str8[100]; // = " 123TtHhRrEe"; // алфавит, отрезок из которого ищем
-    scanf(" %s", str8);
+    scanf(" %[^\n]s", str8);
     int c = 0, maxC = 0;
     int siz7 = sizStr(str7), siz8 = sizStr(str8);
     for(int i = 0; i < siz7; i+=1)
