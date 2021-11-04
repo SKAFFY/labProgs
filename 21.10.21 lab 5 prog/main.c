@@ -22,5 +22,14 @@ int main()
         }
         printf("\n");
     }
+    printf("transpon mat1:\n");
+     for(int i = 0; i<2; i++)
+    {
+        for(int j = 0; j< 2; j++)
+        {
+            printf("%d ", mat2[j][i]);
+        }
+        printf("\n");
+    }
     return 0;
 }
