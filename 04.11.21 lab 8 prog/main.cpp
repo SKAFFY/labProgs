@@ -16,9 +16,11 @@ int main()
 {
     // 1 4 7 8 11
     // BEGIN concatenatio
+    printf("1.concatenatio\nwrite 1 string\n");
     char str1[100]; // = "russia is";
     scanf("%[^\n]s", str1);
     char str2[100]; // = " the best";
+    printf("write 2 string\n");
     //printf("vtoryaya:\n");
     scanf(" %[^\n]s", str2);
     int siz = sizStr(str1) + sizStr(str2);
@@ -28,11 +30,13 @@ int main()
         sumStr[i] = str1[i];
     for(int j = 0; j < sizStr(str2); j++)
         sumStr[i+j] = str2[j];
-    printf("\n%s\n", sumStr);
+    printf("result\n%s\n\n", sumStr);
     //END concatenatio
     // BEGIN Ncomparison
+    printf("4.Ncomparison\nwrite 1 string\n");
     char str3[100]; // = "abcdi";
     scanf(" %[^\n]s", str3);
+    printf("write 2 string\n");
     char str4[100]; // = "abcdj";
     scanf(" %[^\n]s", str4);
     int N = 4; // количество сравниваемых символов
@@ -48,18 +52,19 @@ int main()
         {
             if((int)str3[m] > (int)str4[n])
             {
-                printf("\nstr3 is better\n");
+                printf("\nstr1 is better\n\n");
                 break;
             }
             else
             {
-                printf("\nstr4 is better\n");
+                printf("\nstr2 is better\n\n");
                 break;
             }
         }
     }
     // END Ncomparison
     // BEGIN minesizStr
+    printf("7.sizeofstring\nwrite string\n");
     char str5[100]; // = "primer sredney stroky s probelamy";  // если нужно сделать ввод с консоли, то вот нужна€ конструкци€
     scanf(" %[^\n]s", str5);                                       // scanf("%[^\n]s", &str5);
     /*int counter = 0;
@@ -67,13 +72,15 @@ int main()
         counter +=1;
     */
 
-    printf("\nsize of str = %d\n", sizStr(str5));
+    printf("\nsize of str = %d\n\n", sizStr(str5)-1);
     // END minesizStr
     // BEGIN firstEnter
+    printf("8.firstEnter\nwrite string\n");
     char str6[100]; // = "laboratornaya po programmirovaniy";
     scanf(" %[^\n]s", str6);
+    printf("write char\n");
     char need; // = ' '; // искомый символ
-    scanf(" %[^\n]c", &need);
+    scanf(" %c", &need);
     int pos, flag = 0;
     i = 0;
     while(i < sizStr(str6))
@@ -90,11 +97,13 @@ int main()
         }
     }
     if(flag)
-        printf("\npos of \"%c\" = %d\n", need, pos);
+        printf("\npos of \"%c\" = %d\n\n", need, pos);
     // END firstEnter
     // BEGIN отрезок
+    printf("11.segment\nwrite string\n");
     char str7[100]; // = "Meet my family. There are five of us Ц my parents, my elder brother, my baby sister and me. "; // строка в которой ищем
     scanf(" %[^\n]s", str7);
+    printf("write alphabet\n");
     char str8[100]; // = " 123TtHhRrEe"; // алфавит, отрезок из которого ищем
     scanf(" %[^\n]s", str8);
     int c = 0, maxC = 0;
@@ -120,7 +129,7 @@ int main()
             c = 0;
         }
     }
-    printf("\ndlina otrezka = %d\n", maxC);
+    printf("\nsize of segment = %d\n", maxC);
     // END отрезок
     return 0;
 }
