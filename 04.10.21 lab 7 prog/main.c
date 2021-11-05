@@ -2,14 +2,24 @@
 #include <stdlib.h>
 #include <math.h>
 
+enum week {pon = 1, wt = 2, sred = 3, chet = 4, pyat = 5, subb = 6, voskr = 7};
 
+struct coordinates
+{
+    int x;
+    int y;
+};
 
 struct circle
 {
-    int x;
-    int y; // координаты центра
+    struct coordinates c_circle;
     int radius;
 };
+
+double Sq(struct circle obj)
+{
+    return M_PI*pow(obj.radius,2);
+}
 
 struct systems
 {
@@ -26,15 +36,15 @@ union player
 
 int main()
 {
-    enum {pon = 1, wt = 2, sred = 3, chet = 4, pyat = 5, subb = 6, voskr = 7};
+    enum week first;
     int dayNum = pon;
-    printf("ponedelnyik %d den nedely \n\n", dayNum);
+    printf("monday is %d day of week \n\n", dayNum);
     struct circle bublik;
-    bublik.x = 1;
-    bublik.y = 1;
+    bublik.c_circle.x = 1;
+    bublik.c_circle.y = 1;
     bublik.radius = 5;
-    double S = M_PI * pow(bublik.radius, 2);
-    printf("ploshad kruga radiusa 5 ravna %f\n\n", S);
+    //double S = M_PI * pow(bublik.radius, 2);
+    printf("square of circle = %f\n\n", Sq(bublik));
     union player explay;
     int sost;
     scanf("%x", &sost);
